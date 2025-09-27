@@ -1,6 +1,6 @@
 .cardContainer{
     width: max(360px, 100%);
-    background-color: var(--color-primary);
+    /* background-color: var(--color-primary); */
     padding: 1.5rem;
     display: grid;
     grid-template-columns: 1fr;

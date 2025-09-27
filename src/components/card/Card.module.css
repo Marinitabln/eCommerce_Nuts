@@ -5,6 +5,13 @@
     padding: 1.5rem 1rem;
     display: flex;
     flex-direction: column;
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.15);   
+}
+
+.card:hover{
+    transform: scale(1.04);
+    transition: all 0.3s ease; 
+    cursor: pointer;
 }
 
 .card_img{
