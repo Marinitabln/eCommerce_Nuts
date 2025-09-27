@@ -1,0 +1,23 @@
+.cardContainer{
+    width: max(360px, 100%);
+    background-color: var(--color-primary);
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;    
+    justify-content: space-evenly;
+}
+
+
+@media (min-width: 768px) {
+  .cardContainer {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cardContainer {
+    width: min(850px, 80vw);
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
