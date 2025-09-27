@@ -1,0 +1,29 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box; 
+}
+
+:root {
+	--font-sans: system-ui, -apple-system, sans-serif;
+	--color-text: #1f2937;
+	--color-background: #f8fafc;
+	--color-primary: #634B49;
+	--color-border: #e5e7eb;
+	scroll-behavior: smooth;
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+
+html {
+	font-family: var(--font-sans);
+	color: var(--color-text);
+	background: var(--color-background);
+}
+
+
+body {
+	min-height: 100vh;
+}
