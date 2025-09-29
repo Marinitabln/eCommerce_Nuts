@@ -12,7 +12,7 @@ const ProductsContainer = () => {
     <section className={styles.cardContainer}>
       {
         products.map((elem, index) =>
-          <Card key={index} img={elem.url_img} title={elem.title} description={elem.description} price={elem.price} />)
+          <Card key={index} img={elem.url_img} title={elem.title} description={elem.description} presentations={elem.presentations} prices={elem.price} />)
       }
    </section>
   )
