@@ -1,0 +1,18 @@
+.cart{
+    width: min(340px, 100%);
+    display: grid;    
+    margin: auto;
+}
+
+.cartContainer{
+    width: min(340px, 100%);
+    background-color: var(--color-secondary);
+    display: grid ;
+    border-radius: 8px;
+    padding: 1.5rem 1rem;
+    margin: auto;
+}
+
+ul{
+    list-style: none;
+}
