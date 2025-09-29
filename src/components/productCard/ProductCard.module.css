@@ -3,56 +3,71 @@
     border-radius: 8px; 
     width: min(340px, 100%);
     padding: 1.5rem 1rem;
+    margin: auto;
     display: flex;
     flex-direction: column;
     box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.15);   
 }
 
 .card:hover{
-    transform: scale(1.04);
-    transition: all 0.3s ease; 
-    cursor: pointer;
+    background-color: var(--color-secondary);
+    transition: all 1s ease; 
 }
 
 .card_img{
     width: 100%;
-    height: max(100px, 25vh);
+    height: max(100px, 20vh);
     border-radius: 8px;
     margin-bottom: 1rem;
     object-fit: cover;
 }
 
 .card_title{
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     margin-bottom: 0.5rem;
     color: #333;
     border-bottom: 1px solid #ddd;
     padding: 0.8rem 0;
 }
 .card_description{
-    font-size: 1rem;
+    font-size: 0.9rem;
     margin-bottom: 1rem;
     color: #666;
 }
 
-.card_quantity{
+.card_presentation{
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
-.card_quantity select{
+.card_presentation select{
     width: 100%;
     padding: 0.4rem;
     border-radius: 4px;
     border: 1px solid var(--color-border);
 }
 
+.card_quantity{
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    align-items: center;
+}
+
+
 .card_price{
     font-size: 1.3rem;
     font-weight: bold;
     color: var(--color-primary);
-    padding-bottom: 1.5rem;   
+    padding-bottom: 1rem;   
 }
 
+@media (width > 786px) {
+    .card_img{
+    height: max(100px, 15vh);
+}
+}
