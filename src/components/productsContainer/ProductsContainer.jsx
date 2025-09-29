@@ -1,10 +1,10 @@
 import {useState} from 'react'
-import Card from '../card/Card'
+import Card from '../productCard/ProductCard'
 import {PRODUCTS} from '../../data/constants'
-import styles from './CardContainer.module.css'
+import styles from './ProductsContainer.module.css'
 
 
-const CardContainer = () => {
+const ProductsContainer = () => {
 
  const [products, setProducts] = useState(PRODUCTS)
 
@@ -18,4 +18,4 @@ const CardContainer = () => {
   )
 }
 
-export default CardContainer
+export default ProductsContainer
