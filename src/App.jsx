@@ -1,12 +1,13 @@
 import './App.css'
-import CardContainer from './components/cardContainer/CardContainer'
+import ProductsContainer from './components/ProductsContainer/ProductsContainer'
+
 
 
 
 function App() {
   return (
     <>
-      <CardContainer />
+      <ProductsContainer />
     </>
   )
 }
