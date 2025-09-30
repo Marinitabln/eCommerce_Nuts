@@ -1,0 +1,139 @@
+.header {
+    width: max(340px, 100%);
+    box-shadow: 1px 3px 5px rgb(0, 0, 0, 0.09);
+
+}
+
+.container {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/** Hero **/
+
+.hero {
+    --nav-icon-background: url("../../../assets/menu-open.svg");
+    --transform-list-menu: translate(-100%);
+}
+
+.hero:has(.nav__checkbox:checked) {
+    --nav-icon-background: url("../../../assets/menu-close.svg");
+    --transform-list-menu: translate(0);
+}
+
+.nav__logo {
+    height: 55px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+}
+
+.nav__label,
+.nav__logoLink {
+    z-index: 100;
+}
+
+.nav__logoLink {
+    width: min(150px, 90%);
+}
+
+
+.nav__label {
+    width: 30px;
+    height: 30px;
+    background-image: var(--nav-icon-background);
+    background-size: cover;
+    cursor: pointer;
+    transition: .4s background-image;
+}
+
+.nav__checkbox {
+    display: none;
+}
+
+.nav__list {
+    position: absolute;
+    inset: 0;
+
+    padding: 0;
+    display: grid;
+    place-content: center;
+    gap: 1rem;
+
+    text-align: center;
+    list-style: none;
+    background-color: var(--color-secondary);
+
+    transform: var(--transform-list-menu);
+    transition: transform .5s;
+}
+
+
+.nav__link {
+    display: inline-block;
+    padding: .8rem .5rem;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nav__link:hover {
+    color: #fff;
+    transition: .3s background-color, .3s color;
+}
+
+.nav__link--cta {
+    border: 1px black solid;
+    border-radius: 10px;
+    padding-inline: 1.8rem;
+}
+
+.nav__link--cta:hover {
+    border: 1px #fff solid;
+    transition: .3s border;
+}
+
+
+
+@media (width >=900px) {
+
+    /** Hero **/
+
+    .hero {
+        --transform-list-menu: translate(0%);
+    }
+
+    .nav__label {
+        display: none;
+        cursor: pointer;
+    }
+
+    .nav__list {
+        position: static;
+        background-color: var(--color-background);
+        color: var(--color-primary);
+        grid-auto-flow: column;
+        place-content: unset;
+        gap: 1rem;
+    }
+
+    .nav__link {
+        color: var(--color-primary);;
+    }
+
+    .nav__link:hover {
+        color: var(--color-secondary);
+        transition: .3s background-color, .3s color;
+    }
+
+    .nav__link--cta:hover {
+        border: 1px var(--color-secondary) solid;
+        transition: .3s border;
+    }
+
+}
