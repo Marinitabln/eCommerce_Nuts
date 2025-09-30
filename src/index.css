@@ -10,8 +10,9 @@
 	--font-sans: system-ui, -apple-system, sans-serif;
 	--color-text: #1f2937;
 	--color-background: #f8fafc;
+	--color-background-secondary: #f5f5f5;
 	--color-primary: #634B49;
-	--color-secondary: #634b4925;
+	--color-secondary: #c6b5b3;
 	--color-border: #e5e7eb;
 	scroll-behavior: smooth;
 	line-height: 1.5;
