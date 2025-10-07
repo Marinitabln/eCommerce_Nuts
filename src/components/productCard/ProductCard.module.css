@@ -1,7 +1,7 @@
 .card{
     background-color: var(--color-background-secondary);
     border-radius: 8px; 
-    width: min(340px, 100%);
+    width: min(280px, 100%);
     padding: 1.5rem 1rem;
     margin: auto;
     display: flex;
@@ -10,13 +10,13 @@
 }
 
 .card:hover{
-    background-color: var(--color-secondary);
+    background-color: #eeeeee;
     transition: all 1s ease; 
 }
 
 .card_img{
     width: 100%;
-    height: max(100px, 20vh);
+    height: max(100px, 15vh);
     border-radius: 8px;
     margin-bottom: 1rem;
     object-fit: cover;

@@ -1,7 +1,8 @@
 .header {
     width: max(340px, 100%);
     box-shadow: 1px 3px 5px rgb(0, 0, 0, 0.09);
-
+    background-color: var(--color-background);
+    height: 100px;
 }
 
 .container {
@@ -23,14 +24,15 @@
 }
 
 .nav__logo {
-    height: 55px;
+    height: 85px;
+    margin: auto 0;
 }
 
 .nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 80px;
+    height: 100px;
 }
 
 .nav__label,
@@ -76,6 +78,8 @@
 
 .nav__link {
     display: inline-block;
+    width: max-content;
+    position: relative;
     padding: .8rem .5rem;
     color: var(--color-primary);
     text-decoration: none;
@@ -87,17 +91,23 @@
     transition: .3s background-color, .3s color;
 }
 
-.nav__link--cta {
-    border: 1px black solid;
-    border-radius: 10px;
-    padding-inline: 1.8rem;
+.nav__link::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-primary) 50%);
+    border-radius: 0 0 10px 10px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin:top;
 }
 
-.nav__link--cta:hover {
-    border: 1px #fff solid;
-    transition: .3s border;
+.nav__link:hover::after{
+    transform: scaleX(1);
 }
-
 
 
 @media (width >=900px) {
@@ -129,11 +139,6 @@
     .nav__link:hover {
         color: var(--color-secondary);
         transition: .3s background-color, .3s color;
-    }
-
-    .nav__link--cta:hover {
-        border: 1px var(--color-secondary) solid;
-        transition: .3s border;
     }
 
 }

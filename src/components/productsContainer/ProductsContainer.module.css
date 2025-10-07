@@ -1,6 +1,7 @@
 .cardContainer{
     width: max(360px, 100%);
-    padding: 1.5rem;
+    padding: 4rem 1.5rem;
+    margin: 0 auto ;
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;    
