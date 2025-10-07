@@ -1,15 +1,38 @@
-import { useState } from 'react'
-import { PRODUCTS } from '../data/constants'
+import { useEffect, useState } from 'react'
 
 import ProductCard from '../components/productCard/ProductCard'
+import { getProducts } from '../services/services'
 
 const Inicio = ({ handleAddToCart }) => {
 
-    const [products, setProducts] = useState(PRODUCTS)
+    const [products, setProducts] = useState([])
+    const [loading, setLoading] = useState(true)
+
+    const productosAMostrar = [products[0],products[11],products[5], products[19],products[15],products[18]];
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            try {
+                const data = await getProducts()
+                if (data) {
+                    setProducts(data)
+                }
+            } catch (error) {
+                console.error('Error loading products:', error)
+            } finally {
+                setLoading(false)
+            }
+        }
+        fetchProducts()
+    }, [])
+
+    if (loading) return <span>Cargando productos...</span>
+
     return (
         <>
             {
-                products.map((elem, index) =>
+                productosAMostrar &&
+                productosAMostrar.map((elem, index) =>
                     <ProductCard
                         key={index}
                         img={elem.url_img}

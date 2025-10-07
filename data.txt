@@ -1,0 +1,365 @@
+[
+  {
+    "url_img": "https://acdn-us.mitiendanube.com/stores/002/712/058/products/avena-tradi1-a172eabf934188626216731096167101-640-0.png",
+    "product_name": "Avena tradicional",
+    "description": "Avena natural en hojuelas, ideal para desayunos o repostería.",
+    "presentations": ["250gr", "500gr", "1kg"],
+    "price": [1200, 2200, 4100],
+    "category": "cereales",
+    "id": "1"
+  },
+  {
+    "url_img": "https://ivycocina.com/wp-content/uploads/2025/07/granola_web-scaled-e1752081819401.webp",
+    "product_name": "Granola artesanal",
+    "description": "Mezcla de cereales tostados con miel y frutas deshidratadas.",
+    "presentations": ["250gr", "500gr", "1kg"],
+    "price": [1500, 2700, 5000],
+    "category": "cereales",
+    "id": "2"
+  },
+  {
+    "url_img": "https://st2.depositphotos.com/1364913/7108/i/450/depositphotos_71089115-stock-photo-heap-of-cornflakes-in-bowl.jpg",
+    "product_name": "Copos de maíz sin azúcar",
+    "description": "Copos de maíz naturales, sin aditivos ni azúcares añadidos.",
+    "presentations": ["250gr", "500gr", "1kg"],
+    "price": [1100, 2000, 3800],
+    "category": "cereales",
+    "id": "3"
+  },
+  {
+    "url_img": "https://cdn0.uncomo.com/es/posts/4/1/7/como_hacer_quinoa_inflada_50714_orig.jpg",
+    "product_name": "Cereal de quinoa inflada",
+    "description": "Cereal de quinoa inflada, liviano y nutritivo, sin gluten.",
+    "presentations": ["200gr", "400gr", "800gr"],
+    "price": [1800, 3200, 5900],
+    "category": "cereales",
+    "id": "4"
+  },
+  {
+    "url_img": "https://culturaalimentaria.com.ar/wp-content/uploads/2016/05/avena.jpg",
+    "product_name": "Avena instantánea",
+    "description": "Avena precocida, de rápida cocción, ideal para el desayuno.",
+    "presentations": ["250gr", "500gr", "1kg"],
+    "price": [1300, 2400, 4400],
+    "category": "cereales",
+    "id": "5"
+  },
+  {
+    "url_img": "https://demivalle.cl/cdn/shop/products/burgol-grueso.jpg?v=1620574425",
+    "product_name": "Trigo burgol",
+    "description": "Grano de trigo partido, ideal para tabule o guarniciones.",
+    "presentations": ["250gr", "500gr", "1kg"],
+    "price": [1000, 1900, 3600],
+    "category": "cereales",
+    "id": "6"
+  },
+  {
+    "url_img": "https://www.vivamisalud.com/wp-content/uploads/2018/11/cerealesintegrales.jpg",
+    "product_name": "Mix cereales integrales",
+    "description": "Combinación de avena, trigo y centeno integral.",
+    "presentations": ["250gr", "500gr", "1kg"],
+    "price": [1400, 2500, 4700],
+    "category": "cereales",
+    "id": "7"
+  },
+  {
+    "url_img": "https://st3.depositphotos.com/7040152/13932/i/450/depositphotos_139325602-stock-photo-puffed-rice-cereal.jpg",
+    "product_name": "Cereal de arroz inflado",
+    "description": "Cereal liviano de arroz, sin gluten ni conservantes.",
+    "presentations": ["250gr", "500gr", "1kg"],
+    "price": [1100, 2100, 3900],
+    "category": "cereales",
+    "id": "8"
+  },
+  {
+    "url_img": "https://tequierovegano.cl/wp-content/uploads/2025/05/HARINA-AVENA.jpg",
+    "product_name": "Harina de avena",
+    "description": "Harina integral de avena, perfecta para panificados y repostería saludable.",
+    "presentations": ["500gr", "1kg"],
+    "price": [1700, 3200],
+    "category": "cereales",
+    "id": "9"
+  },
+  {
+    "url_img": "https://i.pinimg.com/564x/1b/27/36/1b2736ebfb058f55b2b1968b7299cba9.jpg",
+    "product_name": "Cereal integral con miel",
+    "description": "Cereal integral endulzado naturalmente con miel orgánica.",
+    "presentations": ["250gr", "500gr", "1kg"],
+    "price": [1600, 2800, 5200],
+    "category": "cereales",
+    "id": "10"
+  },
+
+  {
+    "url_img": "https://agourmet.cl/cdn/shop/products/almendras-naturales.jpg?v=1622883483",
+    "product_name": "Almendras naturales",
+    "description": "Almendras crudas seleccionadas, ricas en proteínas y grasas saludables.",
+    "presentations": ["200gr", "500gr", "1kg"],
+    "price": [2600, 5900, 10900],
+    "category": "frutos secos",
+    "id": "11"
+  },
+  {
+    "url_img": "https://cdn.pedix.app/XlNmmD6QeZdL9zUh9zTf/products/1718404505432.png?size=800x800",
+    "product_name": "Nueces mariposa",
+    "description": "Mitades de nuez pelada, perfectas para snacks o repostería.",
+    "presentations": ["200gr", "500gr", "1kg"],
+    "price": [2700, 6000, 11100],
+    "category": "frutos secos",
+    "id": "12"
+  },
+  {
+    "url_img": "https://cdn.shopify.com/s/files/1/2964/0212/files/35_ba0927a1-95e3-4d4e-be4b-9a491e634284_480x480.png?v=1720186653",
+    "product_name": "Castañas de cajú",
+    "description": "Castañas naturales sin sal, de textura cremosa y sabor suave.",
+    "presentations": ["200gr", "500gr", "1kg"],
+    "price": [3100, 6900, 12500],
+    "category": "frutos secos",
+    "id": "13"
+  },
+  {
+    "url_img": "https://agronuss.cl/wp-content/uploads/2023/11/mani-sin-sal.jpg",
+    "product_name": "Maní tostado sin sal",
+    "description": "Maní natural tostado sin aditivos ni sal añadida.",
+    "presentations": ["200gr", "500gr", "1kg"],
+    "price": [1000, 2200, 4000],
+    "category": "frutos secos",
+    "id": "14"
+  },
+  {
+    "url_img": "https://img.freepik.com/fotos-premium/avellanas-peladas-primer-plano-cuchara-madera-vista-arriba_230115-4640.jpg",
+    "product_name": "Avellanas peladas",
+    "description": "Avellanas crujientes y dulces, ideales para snacks o repostería.",
+    "presentations": ["200gr", "500gr", "1kg"],
+    "price": [3500, 7500, 13500],
+    "category": "frutos secos",
+    "id": "15"
+  },
+  {
+    "url_img": "https://images.ecestaticos.com/usFSSFoyYWFu8hh9GCe-lYa085Q=/117x0:1999x1411/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2Faa8%2F26e%2F5f1%2Faa826e5f1d9b1c2efa3faf8b58688558.jpg",
+    "product_name": "Mix de frutos secos",
+    "description": "Combinación equilibrada de almendras, nueces, pasas y castañas.",
+    "presentations": ["200gr", "500gr", "1kg"],
+    "price": [2800, 6200, 11300],
+    "category": "frutos secos",
+    "id": "16"
+  },
+  {
+    "url_img": "https://nutrifoodgt.com/cdn/shop/files/pistacho2.jpg?v=1736207337&width=480",
+    "product_name": "Pistachos naturales",
+    "description": "Pistachos sin sal, fuente de proteínas y antioxidantes.",
+    "presentations": ["200gr", "500gr", "1kg"],
+    "price": [3900, 8200, 15200],
+    "category": "frutos secos",
+    "id": "17"
+  },
+  {
+    "url_img": "https://soycomocomo.es/media/2019/07/nous-pecanes.jpg",
+    "product_name": "Nueces pecán",
+    "description": "Nuez pecán argentina de sabor intenso y textura suave.",
+    "presentations": ["200gr", "500gr", "1kg"],
+    "price": [3200, 7100, 12900],
+    "category": "frutos secos",
+    "id": "18"
+  },
+  {
+    "url_img": "https://i.etsystatic.com/54102561/r/il/ce42eb/6266400194/il_570xN.6266400194_n478.jpg",
+    "product_name": "Cacahuates con miel",
+    "description": "Maní cubierto con miel natural, tostado lentamente.",
+    "presentations": ["200gr", "500gr", "1kg"],
+    "price": [1400, 2800, 5200],
+    "category": "frutos secos",
+    "id": "19"
+  },
+  {
+    "url_img": "https://alfa-editores.com.mx/wp-content/uploads/2021/03/PASITAS-BOWL-MADERA-4-1200x642.jpg",
+    "product_name": "Pasas de uva negras",
+    "description": "Pasas dulces sin azúcar añadida, perfectas para panificados.",
+    "presentations": ["200gr", "500gr", "1kg"],
+    "price": [1000, 2100, 3800],
+    "category": "frutos secos",
+    "id": "20"
+  },
+
+  {
+    "url_img": "https://cloudfront-us-east-1.images.arcpublishing.com/infobae/KJH5NYG5GZCUTN6OR7P4EO4U5I.jpg",
+    "product_name": "Semillas de chía",
+    "description": "Fuente natural de omega 3, fibra y antioxidantes.",
+    "presentations": ["250gr", "500gr", "1kg"],
+    "price": [1300, 2400, 4300],
+    "category": "semillas",
+    "id": "21"
+  },
+  {
+    "url_img": "https://miserdiet.com.ar/wp-content/uploads/2022/08/c6d17744-637f-4683-b222-0931e91729b7.jpg",
+    "product_name": "Semillas de girasol",
+    "description": "Semillas peladas, tostadas y listas para consumir.",
+    "presentations": ["250gr", "500gr", "1kg"],
+    "price": [1000, 1900, 3500],
+    "category": "semillas",
+    "id": "22"
+  },
+  {
+    "url_img": "https://tn.com.ar/resizer/v2/la-semilla-de-lino-tiene-muchos-nutrientes-foto-adobe-stock-L47MTEQ43RFXFKEV24SYTLXYB4.jpeg?auth=23afc94a6319a25c4245a4bf7324315d03cae63661be9d9413da6e49519dffdf&width=767",
+    "product_name": "Semillas de lino",
+    "description": "Semillas de lino dorado, fuente de fibra y omega 3.",
+    "presentations": ["250gr", "500gr", "1kg"],
+    "price": [900, 1700, 3200],
+    "category": "semillas",
+    "id": "23"
+  },
+  {
+    "url_img": "https://districonf.com.ar/wp-content/uploads/2021/04/semillas-de-sesamo-integral-100g4-fe686e001530c0f23e15716233061174-640-01.jpg",
+    "product_name": "Sésamo integral",
+    "description": "Semillas de sésamo integral, ideales para panes o ensaladas.",
+    "presentations": ["250gr", "500gr", "1kg"],
+    "price": [800, 1500, 2800],
+    "category": "semillas",
+    "id": "24"
+  },
+  {
+    "url_img": "https://mejorconsalud.as.com/wp-content/uploads/2018/06/pipas-calabaza-semillas.jpg",
+    "product_name": "Semillas de calabaza",
+    "description": "Semillas crudas con alto contenido de zinc y magnesio.",
+    "presentations": ["250gr", "500gr", "1kg"],
+    "price": [1600, 2900, 5400],
+    "category": "semillas",
+    "id": "25"
+  },
+  {
+    "url_img": "https://d22fxaf9t8d39k.cloudfront.net/c21c5f4e8d9c365ce433a47d9a117f2ecfad4def82291d21f764437afedd20e7284932.jpg",
+    "product_name": "Mix de semillas",
+    "description": "Combinación de chía, lino, sésamo y girasol.",
+    "presentations": ["250gr", "500gr", "1kg"],
+    "price": [1500, 2700, 5000],
+    "category": "semillas",
+    "id": "26"
+  },
+  {
+    "url_img": "https://cdn0.ecologiaverde.com/es/posts/3/3/4/que_son_las_semillas_de_amapola_4433_0_600.jpg",
+    "product_name": "Semillas de amapola",
+    "description": "Pequeñas semillas negras, ideales para repostería.",
+    "presentations": ["250gr", "500gr", "1kg"],
+    "price": [1400, 2500, 4700],
+    "category": "semillas",
+    "id": "27"
+  },
+  {
+    "url_img": "https://http2.mlstatic.com/D_NQ_NP_967060-MLA28559657155_112018-O.webp",
+    "product_name": "Semillas de sésamo blanco",
+    "description": "Sésamo blanco descascarado, rico en calcio y proteínas.",
+    "presentations": ["250gr", "500gr", "1kg"],
+    "price": [900, 1700, 3200],
+    "category": "semillas",
+    "id": "28"
+  },
+  {
+    "url_img": "https://i.blogs.es/5e7a86/istock-507146608/840_560.jpg",
+    "product_name": "Semillas de cáñamo",
+    "description": "Semillas peladas, fuente de proteínas y grasas saludables.",
+    "presentations": ["250gr", "500gr", "1kg"],
+    "price": [2100, 3900, 7100],
+    "category": "semillas",
+    "id": "29"
+  },
+  {
+    "url_img": "https://cdn.unotv.com/images/2024/08/semillas-de-mostaza-jpg-140457-1024x576.jpeg",
+    "product_name": "Semillas de mostaza",
+    "description": "Semillas secas para condimentar o germinar.",
+    "presentations": ["250gr", "500gr", "1kg"],
+    "price": [800, 1500, 2800],
+    "category": "semillas",
+    "id": "30"
+  },
+
+  {
+    "url_img": "https://boletindesalud.com.ar/wp-content/uploads/2020/09/miel-pura-abejas.jpg",
+    "product_name": "Miel pura de abejas",
+    "description": "Miel 100% natural, sin aditivos ni conservantes.",
+    "presentations": ["250gr", "500gr", "1kg"],
+    "price": [2100, 3900, 7200],
+    "category": "productos envasados",
+    "id": "31"
+  },
+  {
+    "url_img": "https://image.tuasaude.com/media/article/qw/90/como-usar-o-oleo-de-coco_15528.jpg?width=686&height=487",
+    "product_name": "Aceite de coco virgen",
+    "description": "Aceite prensado en frío, ideal para cocinar o uso cosmético.",
+    "presentations": ["250ml", "500ml", "1L"],
+    "price": [2500, 4700, 8900],
+    "category": "productos envasados",
+    "id": "32"
+  },
+  {
+    "url_img": "https://recipes-specialingredientseurope.b-cdn.net/wp-content/uploads/2023/03/strawberry_jam-500x500.jpg",
+    "product_name": "Mermelada de frutilla orgánica",
+    "description": "Elaborada con fruta natural, sin conservantes ni colorantes.",
+    "presentations": ["250gr", "450gr", "800gr"],
+    "price": [1900, 3300, 6100],
+    "category": "productos envasados",
+    "id": "33"
+  },
+  {
+    "url_img": "https://www.prensalibre.com/wp-content/uploads/2023/11/Para-que-sirve-el-aceite-de-oliva.jpeg?quality=52",
+    "product_name": "Aceite de oliva extra virgen",
+    "description": "Aceite de primera prensada en frío, sabor intenso.",
+    "presentations": ["250ml", "500ml", "1L"],
+    "price": [2900, 5400, 9800],
+    "category": "productos envasados",
+    "id": "34"
+  },
+  {
+    "url_img": "https://media.cnn.com/api/v1/images/stellar/prod/cnne-445268-160705112136-04-fats-that-can-reduce-your-risk-of-dying-super-169.jpg?q=w_1110,c_fill",
+    "product_name": "Mantequilla de maní natural",
+    "description": "Pasta 100% maní, sin azúcar ni aditivos.",
+    "presentations": ["250gr", "500gr", "1kg"],
+    "price": [1900, 3500, 6500],
+    "category": "productos envasados",
+    "id": "35"
+  },
+  {
+    "url_img": "https://www.canal12misiones.com/wp-content/uploads/2023/10/dulce-de-leche-1-1024x683-1.jpg",
+    "product_name": "Dulce de leche artesanal",
+    "description": "Dulce tradicional cocinado lentamente con azúcar orgánica.",
+    "presentations": ["250gr", "500gr", "1kg"],
+    "price": [1600, 2800, 5200],
+    "category": "productos envasados",
+    "id": "36"
+  },
+  {
+    "url_img": "https://m.media-amazon.com/images/I/71iL838WqWL.jpg",
+    "product_name": "Salsa de soja",
+    "description": "Aceite aromático ideal para cocina oriental y ensaladas.",
+    "presentations": ["250ml", "500ml", "1L"],
+    "price": [3100, 5600, 10200],
+    "category": "productos envasados",
+    "id": "37"
+  },
+  {
+    "url_img": "https://comedera.com/wp-content/uploads/sites/9/2020/12/fresh-apple-juice-close-up-shot.jpg?w=4096",
+    "product_name": "Vinagre de manzana orgánico",
+    "description": "Fermentado naturalmente con la 'madre', sin pasteurizar.",
+    "presentations": ["250ml", "500ml", "1L"],
+    "price": [1900, 3300, 6100],
+    "category": "productos envasados",
+    "id": "38"
+  },
+  {
+    "url_img": "https://www.aceitesdeolivadeespana.com/wp-content/uploads/2021/05/Salsa-de-tomate-casera.jpg",
+    "product_name": "Salsa de tomate casera",
+    "description": "Tomates frescos cocinados lentamente con especias naturales.",
+    "presentations": ["250gr", "500gr", "1kg"],
+    "price": [1200, 2200, 4100],
+    "category": "productos envasados",
+    "id": "39"
+  },
+  {
+    "url_img": "https://assets1.farmaciasanpablo.com.mx/landings/_blog/natural/20220929-lecheAlmendras/beneficios-de-leche-de-almendras.jpg",
+    "product_name": "Leche de almendras natural",
+    "description": "Bebida vegetal sin aditivos, ideal para dietas veganas.",
+    "presentations": ["250ml", "500ml", "1L"],
+    "price": [1800, 3100, 5800],
+    "category": "productos envasados",
+    "id": "40"
+  }
+]
