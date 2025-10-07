@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './Header.module.css'
 import logo from '../../../assets/nuts_logo.svg'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
     return (
@@ -8,30 +9,29 @@ const Header = () => {
             <div className={styles.container}>
                 <header className={styles.hero}>
                     <nav className={styles.nav}>
-                        <a href="./" className={styles.nav__logoLink}>
+                        <Link to="./" className={styles.nav__logoLink}>
                             <img src={logo} className={styles.nav__logo} />
-                        </a>
+                        </Link>
 
                         <label className={styles.nav__label}>
                             <input type="checkbox" className={styles.nav__checkbox} />
                         </label>
 
                         <ul className={styles.nav__list}>
-
                             <li className={styles.nav__item}>
-                                <a href="#" className={styles.nav__link}>Cereales</a>
+                                <Link to="/cereales" className={styles.nav__link}>Cereales</Link>
                             </li>
                             <li className={styles.nav__item}>
-                                <a href="#" className={styles.nav__link}>Frutos secos</a>
+                                <Link to="/frutos_secos" className={styles.nav__link}>Frutos secos</Link>
                             </li>
                             <li className={styles.nav__item}>
-                                <a href="#" className={styles.nav__link}>Semillas</a>
+                                <Link to="/semillas" className={styles.nav__link}>Semillas</Link>
                             </li>
                             <li className={styles.nav__item}>
-                                <a href="#" className={styles.nav__link}>Prod. envasados</a>
+                                <Link to="/prod_envasados" className={styles.nav__link}>Prod. envasados</Link>
                             </li>
                             <li className={styles.nav__item}>
-                                <a href="#" className={styles.nav__link}>Contacto</a>
+                                <Link to="#" className={styles.nav__link}>Contacto</Link>
                             </li>
                         </ul>
                     </nav>
