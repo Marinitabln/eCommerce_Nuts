@@ -1,19 +1,26 @@
-import {useState} from 'react'
-import Card from '../productCard/ProductCard'
-import {PRODUCTS} from '../../data/constants'
 import styles from './ProductsContainer.module.css'
+import { Route, Routes } from 'react-router-dom'
+import Inicio from '../../pages/Inicio'
+import FrutosSecos from '../../pages/FrutosSecos'
+import Semillas from '../../pages/Semillas'
+import ProdEnvasados from '../../pages/Prod.Envasados'
+import Cereales from '../../pages/Cereales'
 
 
-const ProductsContainer = () => {
+const ProductsContainer = ({handleAddToCart}) => {
 
- const [products, setProducts] = useState(PRODUCTS)
+
 
   return (
     <section className={styles.cardContainer}>
-      {
-        products.map((elem, index) =>
-          <Card key={index} img={elem.url_img} title={elem.title} description={elem.description} presentations={elem.presentations} prices={elem.price} />)
-      }
+      <Routes>
+        <Route path='/' element={<Inicio handleAddToCart={handleAddToCart}/>} />
+        <Route path='/cereales' element={<Cereales handleAddToCart={handleAddToCart}/>} />
+        <Route path='/frutos_secos' element={<FrutosSecos handleAddToCart={handleAddToCart}/>} />
+        <Route path='/semillas' element={<Semillas handleAddToCart={handleAddToCart}/>} />
+        <Route path='/prod_envasados' element={<ProdEnvasados handleAddToCart={handleAddToCart}/>} />
+      </Routes>
+    
    </section>
   )
 }
