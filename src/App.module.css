@@ -1,0 +1,14 @@
+.container{
+    display: grid;
+    grid-template-columns: auto;
+}
+
+/* @media screen and (width >= 768px) {
+ 
+    .mainContent{
+        grid-column: 1/2;
+    }
+    .sidebar{
+        grid-column: 2/3;
+    }
+} */

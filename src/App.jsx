@@ -1,25 +1,9 @@
-import './App.css'
 import { useState } from 'react'
 import Cart from './components/cart/Cart'
 import ProductsContainer from './components/ProductsContainer/ProductsContainer'
 import LayoutGral from './components/layout/LayoutGral'
+import styles from './App.module.css'
 
-const CART = [
-  {
-    product_name: "Nueces",
-    presentation: "250gr",
-    quantity: 2,
-    unitPrice: "1000",
-    subtotal: "2000"
-  },
-  {
-    product_name: "Pistachos",
-    presentation: "500gr",
-    quantity: 3,
-    unitPrice: "1900",
-    subtotal: "5700"
-  }
-]
 
 function App() {
 
@@ -27,10 +11,8 @@ function App() {
 
   //Add product to cart
   const handleAddToCart = (productToCart) => {
-    setCart((prevCart)=>[...prevCart, productToCart])
+    setCart((prevCart) => [...prevCart, productToCart])
   }
-
-/*   console.log(cart); */
 
   //Clear cart
   const handleClearCart = () => {
@@ -40,8 +22,15 @@ function App() {
   return (
 
     <LayoutGral>
-      <ProductsContainer handleAddToCart={handleAddToCart} />
-      <Cart cart={cart} handleClearCart={handleClearCart} />
+      <div className={styles.container}>
+        <div className={styles.mainContent}>
+          <ProductsContainer handleAddToCart={handleAddToCart} />
+        </div>
+        <div className={styles.sidebar}>
+          <Cart cart={cart} handleClearCart={handleClearCart} />
+        </div>
+
+      </div>
     </LayoutGral>
 
   )

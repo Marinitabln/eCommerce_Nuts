@@ -39,3 +39,30 @@
 .cartItem:last-of-type {
     padding-bottom: 1rem;
 }
+
+.totalRow {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    border-top: solid 0.2px var(--color-primary);
+    padding-top: 1rem;
+}
+
+.totalRow>span {
+    font-weight: 600;
+}
+
+@media (width >=768px) {
+    .cartContainer ul {
+        width: min(600px, 100%);
+        padding: 1rem 0;
+        margin: auto;
+    }
+
+    .totalRow {
+        flex-direction: row;
+    }
+}

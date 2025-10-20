@@ -1,15 +1,20 @@
-import React, { useEffect, useState } from 'react'
+'use client'
+import { useEffect, useState } from 'react'
 import styles from './ProductCard.module.css'
 import { AiOutlineMinusCircle, AiOutlinePlusCircle } from 'react-icons/ai'
+import Button from '../ui/Button'
+import { useNavigate } from 'react-router-dom'
 
 
-const ProductCard = ({ img, product_name, description, presentations, prices, handleAddToCart }) => {
+
+const ProductCard = ({ id, img, product_name, description, presentations, prices, handleAddToCart }) => {
 
   const [quantity, setQuantity] = useState(1)
   const [presentation, setPresentation] = useState(presentations[0])
   const [price, setPrice] = useState(prices[0])
   const [subtotal, setSubtotal] = useState(prices[0])
 
+  const navigate = useNavigate()
 
   //Manejar cantidad
   const decreaseQuantity = () => {
@@ -20,14 +25,14 @@ const ProductCard = ({ img, product_name, description, presentations, prices, ha
   }
 
   //Manejar presentacion
-    const handlePresentation = (e) => {
+  const handlePresentation = (e) => {
     const selectedPresentation = e.target.value
     const index = presentations.indexOf(selectedPresentation)
     setPresentation(selectedPresentation)
     setPrice(prices[index])
   }
 
-   // Manejar envío de form
+  // Manejar envío de form
   const handleProductToCart = (e) => {
     e.preventDefault()
 
@@ -41,6 +46,12 @@ const ProductCard = ({ img, product_name, description, presentations, prices, ha
 
     console.log("Producto agregado:", productToCart)
     handleAddToCart(productToCart)
+    setQuantity(1);
+  }
+
+  //Manejar redirección a Detalle
+  const handleDetail = ()=>{
+   navigate(`/${id}`)
   }
 
   useEffect(() => {
@@ -63,13 +74,16 @@ const ProductCard = ({ img, product_name, description, presentations, prices, ha
           </select>
         </div>
         <span className={styles.card_price}>${price}</span>
-        <span className={styles.card_quantity}>
-          <AiOutlineMinusCircle onClick={decreaseQuantity} />
-          <span>{quantity}</span>
-          <AiOutlinePlusCircle onClick={increaseQuantity} />
-        </span>
+        <div className={styles.card_quantity_subtotal}>
+          <span className={styles.card_quantity}>
+            <AiOutlineMinusCircle onClick={decreaseQuantity} />
+            <span>{quantity}</span>
+            <AiOutlinePlusCircle onClick={increaseQuantity} />
+          </span>
           {quantity > 1 ? `Subtotal: $${subtotal}` : ""}
-        <button type="submit">Agregar</button>
+        </div>
+        <Button type="submit" text="Agregar" variant="primary" />
+        <Button type="button" text="Ver detalle" variant="secondary" onClick={handleDetail}/>
       </form>
     </div>
   )

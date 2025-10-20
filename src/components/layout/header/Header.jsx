@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from './Header.module.css'
 import logo from '../../../assets/nuts_logo.svg'
 import { Link } from 'react-router-dom'
