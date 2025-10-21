@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-
 import ProductCard from '../components/productCard/ProductCard'
 import { getProducts } from '../services/services'
 
@@ -42,9 +41,9 @@ const Inicio = ({ handleAddToCart }) => {
                     <ProductCard
                         key={elem.id}
                         id={elem.id}
+                        category={elem.category}
                         img={elem.url_img}
                         product_name={elem.product_name}
-                       /*  description={elem.description} */
                         presentations={elem.presentations}
                         prices={elem.price}
                         handleAddToCart={handleAddToCart} />)

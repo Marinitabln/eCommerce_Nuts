@@ -9,9 +9,6 @@ import DetalleProd from '../../pages/DetalleProd'
 
 
 const ProductsContainer = ({ handleAddToCart }) => {
-
-
-
   return (
     <section className={styles.cardContainer}>
       <Routes>
@@ -20,7 +17,7 @@ const ProductsContainer = ({ handleAddToCart }) => {
         <Route path='/frutos_secos' element={<FrutosSecos handleAddToCart={handleAddToCart} />} />
         <Route path='/semillas' element={<Semillas handleAddToCart={handleAddToCart} />} />
         <Route path='/prod_envasados' element={<ProdEnvasados handleAddToCart={handleAddToCart} />} />
-        <Route path='/:id' element={<DetalleProd />} />
+        <Route path='/:category/:id' element={<DetalleProd handleAddToCart={handleAddToCart} />} />
       </Routes>
 
     </section>

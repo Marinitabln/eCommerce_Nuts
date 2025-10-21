@@ -1,13 +1,13 @@
 'use client'
 import { useEffect, useState } from 'react'
-import styles from './ProductCard.module.css'
+import styles from './ProductCardDetail.module.css'
 import { AiOutlineMinusCircle, AiOutlinePlusCircle } from 'react-icons/ai'
 import Button from '../ui/Button'
 import { useNavigate } from 'react-router-dom'
 
 
 
-const ProductCard = ({ id, category, img, product_name, description, presentations, prices, handleAddToCart }) => {
+const ProductCardDetail = ({ id, category, img, product_name, description, presentations, prices, handleAddToCart }) => {
 
   const [quantity, setQuantity] = useState(1)
   const [presentation, setPresentation] = useState(presentations[0])
@@ -49,9 +49,9 @@ const ProductCard = ({ id, category, img, product_name, description, presentatio
     setQuantity(1);
   }
 
-  //Manejar redirección a Detalle
-  const handleDetail = ()=>{
-   navigate(`/${category}/${id}`)
+  //Manejar redirección a Inicio
+  const handleBack = ()=>{
+   navigate(`/`)
   }
 
   useEffect(() => {
@@ -62,6 +62,7 @@ const ProductCard = ({ id, category, img, product_name, description, presentatio
   return (
     <div className={styles.card}>
       <img src={img} alt={product_name} className={styles.card_img} />
+      <div>
       <h2 className={styles.card_title}>{product_name}</h2>
       <p className={styles.card_description}>{description}</p>
       <form onSubmit={handleProductToCart}>
@@ -83,10 +84,11 @@ const ProductCard = ({ id, category, img, product_name, description, presentatio
           {quantity > 1 ? `Subtotal: $${subtotal}` : ""}
         </div>
         <Button type="submit" text="Agregar" variant="primary" />
-        <Button type="button" text="Ver detalle" variant="secondary" onClick={handleDetail}/>
+        <Button type="button" text="Volver" variant="secondary" onClick={handleBack}/>
       </form>
+      </div>
     </div>
   )
 }
 
-export default ProductCard
+export default ProductCardDetail
