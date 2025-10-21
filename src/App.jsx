@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Cart from './components/cart/Cart'
-import ProductsContainer from './components/ProductsContainer/ProductsContainer'
+import ProductsContainer from './components/productsContainer/ProductsContainer'
 import LayoutGral from './components/layout/LayoutGral'
 import styles from './App.module.css'
 
