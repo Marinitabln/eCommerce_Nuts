@@ -55,9 +55,10 @@
     font-weight: 600;
 }
 
-@media (width >=768px) {
+@media (width >=769px) {
     .cartContainer ul {
         width: min(600px, 100%);
+        background-color: aquamarine;
         padding: 1rem 0;
         margin: auto;
     }

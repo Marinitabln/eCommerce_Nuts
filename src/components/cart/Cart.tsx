@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import styles from './Cart.module.css'
-import Button from '../ui/Button'
+import Button from '../ui/Button.js'
+import { useAppContext } from '../../context/AppContext.js'
 
-const Cart = ({ cart, handleClearCart }) => {
+const Cart = () => {
 
+    const { cart, handleClearCart } = useAppContext()
 
     //Total Carrito
     const [total, setTotal] = useState(0)
