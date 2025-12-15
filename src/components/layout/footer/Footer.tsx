@@ -4,7 +4,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
+    <footer id="contact" className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.contact}>
           <h4>Contactanos</h4>

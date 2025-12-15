@@ -1,16 +1,20 @@
 import ProductCard from '../components/productCard/ProductCard.js'
-import { useCartContext } from '../context/CartContext.js'
 import { useProductsContext } from '../context/ProductContext.js'
+import { filterProductsByCategory } from '../utils/filterProductsByategory.js'
 
 const Semillas = () => {
 
-    const { products } = useProductsContext()
+    const { products, loading, error } = useProductsContext()
+    const semillas = filterProductsByCategory(products, 'semillas')
+
+    if (loading) return <p>Cargando productos...</p>
+    if (error) return <p>Error al cargar productos</p>
 
     return (
         <>
             <h1>Semillas</h1>
             {
-                products.map((elem) =>
+                semillas.map((elem) =>
                     <ProductCard
                         key={elem.id}
                         id={elem.id}

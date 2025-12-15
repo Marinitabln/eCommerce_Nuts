@@ -9,14 +9,13 @@ export const loginService = async (
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       const user = usersDB.find(
-        (u) => u.email === email && u.password === password
+        (user) => user.email === email && user.password === password
       )
 
       if (!user) {
         reject(new Error('Credenciales inválidas'))
         return
       }
-
       const { password: _, ...safeUser } = user
 
       resolve(safeUser)

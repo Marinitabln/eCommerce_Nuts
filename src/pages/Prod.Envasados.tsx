@@ -1,14 +1,20 @@
 import ProductCard from '../components/productCard/ProductCard.js'
 import { useProductsContext } from '../context/ProductContext.js'
+import { filterProductsByCategory } from '../utils/filterProductsByategory.js'
 
 const ProdEnvasados = () => {
 
-    const { products } = useProductsContext()
+    const { products, loading, error } = useProductsContext()
+    const prodEnvasados = filterProductsByCategory(products, 'productos envasados')
+
+    if (loading) return <p>Cargando productos...</p>
+    if (error) return <p>Error al cargar productos</p>
+
     return (
         <>
-            <h1>ProdEnvasados</h1>
+            <h1>Productos envasados</h1>
            {
-                products.map((elem) =>
+                prodEnvasados.map((elem) =>
                    <ProductCard
                         key={elem.id}
                         id={elem.id}

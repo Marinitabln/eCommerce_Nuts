@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useState } from 'react'
 import { loginService } from '../services/auth-service'
 import type { User } from '../types/user-type'
 import { useCartContext } from './CartContext'
+import { Navigate, useNavigate } from 'react-router-dom'
 
 type AuthContextType = {
   user: User | null
@@ -30,6 +31,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const openLoginModal = () => setIsLoginModalOpen(true)
   const closeLoginModal = () => setIsLoginModalOpen(false)
 
+  const navigate = useNavigate()
+
   const login = async (name: string, email: string, password: string) => {
     setAuthLoading(true)
     try {
@@ -49,6 +52,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setIsAuthenticated(false)
     localStorage.removeItem('auth')
     handleClearCart()
+    navigate('/')
   }
 
   useEffect(() => {

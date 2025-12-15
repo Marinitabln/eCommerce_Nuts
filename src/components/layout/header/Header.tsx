@@ -1,7 +1,62 @@
-import styles from './Header.module.css'
+import { BiUserCircle } from 'react-icons/bi'
+import { FaUser } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
+import { useAuthContext } from '../../../context/AuthContext'
+import { useEffect, useRef, useState } from 'react'
+import styles from './Header.module.css'
 
 const Header = () => {
+    const { user, logout } = useAuthContext()
+    const [dropdownOpen, setDropdownOpen] = useState(false)
+
+    const userBtnRef = useRef<HTMLButtonElement | null>(null)
+    const [dropdownPosition, setDropdownPosition] = useState<{ top: number; left: number }>({
+        top: 0,
+        left: 0,
+    })
+    const dropdownRef = useRef<HTMLDivElement | null>(null)
+
+    const getFirstName = (fullName: string | null) => {
+        if (!fullName) return ''
+        return fullName.split(' ')[0]
+    }
+
+    const toggleDropdown = () => {
+        if (!userBtnRef.current) return
+        const rect = userBtnRef.current.getBoundingClientRect()
+        setDropdownPosition({
+            top: rect.bottom + 8,
+             left: rect.right - 140,
+        })
+
+        setDropdownOpen(prev => !prev)
+    }
+
+    const rol = user?.role === 'admin' ? 'ADMINISTRADOR' : 'CLIENTE'
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            const target = event.target as Node
+
+            if (
+                dropdownOpen &&
+                dropdownRef.current &&
+                !dropdownRef.current.contains(target) &&
+                userBtnRef.current &&
+                !userBtnRef.current.contains(target)
+            ) {
+                setDropdownOpen(false)
+            }
+        }
+
+        document.addEventListener('mousedown', handleClickOutside)
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside)
+        }
+    }, [dropdownOpen])
+
+
     return (
         <div className={styles.header}>
             <div className={styles.container}>
@@ -29,9 +84,36 @@ const Header = () => {
                                 <Link to="/prod_envasados" className={styles.nav__link}>Prod. envasados</Link>
                             </li>
                             <li className={styles.nav__item}>
-                                <Link to="#" className={styles.nav__link}>Contacto</Link>
+                                <Link to="#contact" className={styles.nav__link}>Contacto</Link>
                             </li>
+
+                            {user && (
+                                <li className={styles.nav__item}>
+                                    <span
+                                        className={styles.nav_icon}
+                                        onClick={toggleDropdown}
+                                        ref={userBtnRef}
+                                    >
+                                        <FaUser />
+                                    </span>
+                                </li>
+                            )}
                         </ul>
+                        {user && dropdownOpen && (
+                            <div
+                                ref={dropdownRef}
+                                className={styles.dropdown}
+                                style={{
+                                    top: dropdownPosition.top,
+                                    left: dropdownPosition.left,
+                                }}
+                            >
+                                <span>{rol}</span>
+                                <p>{getFirstName(user.name)}</p>
+                                <hr/>
+                                <button onClick={logout}>cerrar sesión</button>
+                            </div>
+                        )}
                     </nav>
                 </header>
             </div>

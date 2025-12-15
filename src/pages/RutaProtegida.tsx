@@ -1,22 +1,21 @@
 import { Navigate, useLocation } from 'react-router-dom'
-import type { ReactNode } from 'react';
-import { useAuthContext } from '../context/AuthContext.js';
+import type { ReactNode } from 'react'
+import { useAuthContext } from '../context/AuthContext'
 
-type RutaProtegidaProps ={
-    children : ReactNode
+type RutaProtegidaProps = {
+  children: ReactNode
 }
 
-const RutaProtegida = ({ children}: RutaProtegidaProps) => {
+const RutaProtegida = ({ children }: RutaProtegidaProps) => {
+  const { isAuthenticated, openLoginModal } = useAuthContext()
+  const location = useLocation()
 
-    const { isAuthenticated} = useAuthContext()
-  
-    const location = useLocation();
+  if (!isAuthenticated) {
+    openLoginModal()
+    return <Navigate to="/" replace />
+  }
 
-    if(!isAuthenticated){
-        return <Navigate to="/login" state={location.state} replace />
-    }
-  
-    return children;
+  return children
 }
 
-export default RutaProtegida;
+export default RutaProtegida
