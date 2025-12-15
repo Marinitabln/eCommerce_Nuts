@@ -1,6 +1,6 @@
 import { Navigate, useLocation } from 'react-router-dom'
-import { useAppContext } from '../context/AppContext.js';
 import type { ReactNode } from 'react';
+import { useAuthContext } from '../context/AuthContext.js';
 
 type RutaProtegidaProps ={
     children : ReactNode
@@ -8,7 +8,7 @@ type RutaProtegidaProps ={
 
 const RutaProtegida = ({ children}: RutaProtegidaProps) => {
 
-    const { isAuthenticated} = useAppContext()
+    const { isAuthenticated} = useAuthContext()
   
     const location = useLocation();
 

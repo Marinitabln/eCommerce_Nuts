@@ -1,5 +1,4 @@
 import styles from './Header.module.css'
-import logo from '../../../assets/nuts_logo.svg'
 import { Link } from 'react-router-dom'
 
 const Header = () => {
@@ -9,7 +8,7 @@ const Header = () => {
                 <header className={styles.hero}>
                     <nav className={styles.nav}>
                         <Link to="./" className={styles.nav__logoLink}>
-                            <img src={logo} className={styles.nav__logo} />
+                            <img src="/nuts_logo.svg" className={styles.nav__logo} />
                         </Link>
 
                         <label className={styles.nav__label}>

@@ -5,7 +5,7 @@ import { AiOutlineMinusCircle, AiOutlinePlusCircle } from 'react-icons/ai'
 
 import { useNavigate } from 'react-router-dom'
 import Button from '../ui/Button'
-import { useAppContext } from '../../context/AppContext'
+import { useCartContext } from '../../context/CartContext'
 import { CartItem, ProductType } from '../../types/product-type'
 
 
@@ -14,7 +14,7 @@ import { CartItem, ProductType } from '../../types/product-type'
 
 const ProductCard = ({ id, category, url_img, product_name, description, presentations, price }: ProductType) => {
 
-  const { handleAddToCart } = useAppContext()
+  const { handleAddToCart } = useCartContext()
 
   const [quantity, setQuantity] = useState(1)
   const [presentation, setPresentation] = useState(presentations[0])

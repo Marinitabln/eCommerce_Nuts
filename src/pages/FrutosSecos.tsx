@@ -1,10 +1,8 @@
 import ProductCard from '../components/productCard/ProductCard.js'
-import { useAppContext } from '../context/AppContext.js'
 import { useProductsContext } from '../context/ProductContext.js'
 
 const FrutosSecos = () => {
 
-    const { handleAddToCart } = useAppContext()
     const { products } = useProductsContext()
 
     return (

@@ -2,7 +2,7 @@ import { type ReactNode } from 'react'
 import styles from './Ui.module.css'
 import clsx from 'clsx'
 
-type ButtonVariant = 'primary' | 'secondary' | 'danger'
+type ButtonVariant = 'primary' | 'secondary' | 'danger' | 'fill'
 
 type ButtonProps = {
   type?: 'button' | 'submit' | 'reset'

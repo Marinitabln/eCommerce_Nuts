@@ -8,8 +8,6 @@ import Cereales from '../../pages/Cereales.js'
 import DetalleProd from '../../pages/DetalleProd.js'
 import RutaProtegida from '../../pages/RutaProtegida.js'
 import Pagar from '../../pages/Pagar.js'
-import Login from '../../pages/Login.js'
-import { useAppContext } from '../../context/AppContext.js'
 
 
 const ProductsContainer = () => {
@@ -24,7 +22,6 @@ const ProductsContainer = () => {
         <Route path='/semillas' element={<Semillas  />} />
         <Route path='/prod_envasados' element={<ProdEnvasados  />} />
         <Route path='/:category/:id' element={<DetalleProd />} />
-        <Route path='/login' element={<Login  />} />
         <Route path='/pagar' element={<RutaProtegida >
           <Pagar />
         </RutaProtegida>

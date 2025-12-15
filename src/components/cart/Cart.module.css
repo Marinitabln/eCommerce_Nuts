@@ -33,11 +33,15 @@
     font-size: .7rem;
     width: 100%;
     display: grid;
-    grid-template-columns: 2fr .7fr .7fr 1fr 1fr;
+    grid-template-columns: 2fr .7fr .7fr 1fr 1fr .5fr;
 }
 
 .cartItem:last-of-type {
     padding-bottom: 1rem;
+}
+
+.deleteCartItem {
+    cursor: pointer;
 }
 
 .totalRow {
@@ -56,9 +60,11 @@
 }
 
 @media (width >=769px) {
+    .cart{
+        padding-top: 64px;
+    }
     .cartContainer ul {
         width: min(600px, 100%);
-        background-color: aquamarine;
         padding: 1rem 0;
         margin: auto;
     }

@@ -1,14 +1,18 @@
-
-
 .container{
     display: grid;
     grid-template-columns: auto;
 }
 
-@media screen and (width >= 768px) {
+@media screen and (width >= 1024px) {
+
+    .container{
+        width: min(90%, 1200px);
+        margin: auto;
+    }
  
     .mainContent{
         grid-column: 1/2;
+        
     }
     .sidebar{
         grid-column: 2/3;

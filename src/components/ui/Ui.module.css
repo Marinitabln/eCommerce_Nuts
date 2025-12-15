@@ -30,3 +30,13 @@
   color: white ;
   border: none;
 }
+
+/* Variante fill */
+.fill {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.fill:hover {
+  background-color: var(--color-secondary);
+}

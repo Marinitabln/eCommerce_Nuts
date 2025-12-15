@@ -1,26 +1,29 @@
-import React, { useEffect, useState } from 'react'
 import styles from './Cart.module.css'
 import Button from '../ui/Button.js'
-import { useAppContext } from '../../context/AppContext.js'
+
+import { useNavigate } from 'react-router-dom'
+import { useCartContext } from '../../context/CartContext'
+import { useAuthContext } from '../../context/AuthContext'
 
 const Cart = () => {
 
-    const { cart, handleClearCart } = useAppContext()
+    const { cart, totalCart, handleClearCart, handleClearProductById } = useCartContext()
+    const { isAuthenticated, openLoginModal } = useAuthContext()
 
-    //Total Carrito
-    const [total, setTotal] = useState(0)
+    const navigate = useNavigate()
 
-
-    useEffect(() => {
-
-        cart.length > 0 ? (
-            cart.map((item) => {
-                setTotal(prevTotal => prevTotal + Number(item.subtotal))
-            })
-        ) : ""
-
-    }, [cart])
-
+    const handlePayment = () => {
+        console.log("intentó pagar", isAuthenticated);
+        
+        if (isAuthenticated === false) {
+            console.log("no está autenticado, abre modal");
+            
+            openLoginModal()
+        } else {
+             console.log("Está autenticado, envia a pagar");
+            navigate('/pagar')
+        }
+    }
 
     return (
 
@@ -39,6 +42,7 @@ const Cart = () => {
                                     <p>CANT.</p>
                                     <p>P.UNIT.</p>
                                     <p>SUBTOTAL</p>
+                                    <p></p>
                                 </li>
                                 {(cart.map((item, index) => {
                                     console.log(Number(item.subtotal));
@@ -47,15 +51,19 @@ const Cart = () => {
                                             <span>{item.product_name}</span>
                                             <span>{item.presentation}</span>
                                             <span>{item.quantity}</span>
-                                            <span>{item.unitPrice}</span>
-                                            <span>{item.subtotal}</span>
+                                            <span>${item.unitPrice}</span>
+                                            <span>${item.subtotal}</span>
+                                            <span className={styles.deleteCartItem} onClick={() =>
+                                                handleClearProductById(item.productId, item.presentation)
+                                            }>X</span>
                                         </li>
                                     )
                                 }
                                 ))}
                                 <li className={styles.totalRow}>
-                                    <span>TOTAL ${total}</span>
+                                    <span>TOTAL ${totalCart}</span>
                                     <Button text="Vaciar carrito" onClick={handleClearCart} />
+                                    <Button text="Pagar" onClick={handlePayment} />
                                 </li>
                             </ul >
                         </div>

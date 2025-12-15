@@ -19,5 +19,6 @@
   .cardContainer {
     width: min(850px, 80vw);
     grid-template-columns: 1fr 1fr 1fr;
+    padding: 4rem 1.5rem 4rem 0;
   }
 }

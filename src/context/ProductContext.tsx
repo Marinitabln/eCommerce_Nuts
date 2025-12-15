@@ -15,6 +15,7 @@ export function ProductsProvider({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
 
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
