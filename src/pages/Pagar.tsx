@@ -1,10 +1,9 @@
-import React from 'react'
+import Checkout from "../components/checkout/Checkout"
+
 
 const Pagar = () => {
   return (
-    <div>
-      pagar
-    </div>
+    <Checkout />
   )
 }
 

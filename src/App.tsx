@@ -1,15 +1,18 @@
+import { Routes, Route } from 'react-router-dom'
 import Cart from './components/cart/Cart'
-import ProductsContainer from './components/productsContainer/ProductsContainer'
 import LayoutGral from './components/layout/LayoutGral'
-import styles from './App.module.css'
+import ProductsContainer from './components/productsContainer/ProductsContainer'
+import Checkout from './components/checkout/Checkout'
 import { CartProvider } from './context/CartContext'
 import { ProductsProvider } from './context/ProductContext'
 import { AuthProvider } from './context/AuthContext'
-
-
+import styles from './App.module.css'
+import { useLocation } from 'react-router-dom'
+import RutaProtegida from './pages/RutaProtegida'
 
 function App() {
-
+  const location = useLocation()
+  const isCheckout = location.pathname.startsWith('/pagar')
 
   return (
     <CartProvider>
@@ -18,11 +21,25 @@ function App() {
           <LayoutGral>
             <div className={styles.container}>
               <div className={styles.mainContent}>
-                <ProductsContainer />
+                <Routes>
+                  <Route path="/*" element={<ProductsContainer />} />
+
+                  <Route
+                    path="/pagar"
+                    element={
+                      <RutaProtegida>
+                        <Checkout />
+                      </RutaProtegida>
+                    }
+                  />
+                </Routes>
               </div>
-              <div className={styles.sidebar}>
-                <Cart />
-              </div>
+
+              {!isCheckout && (
+                <div className={styles.sidebar}>
+                  <Cart />
+                </div>
+              )}
             </div>
           </LayoutGral>
         </ProductsProvider>
@@ -30,4 +47,5 @@ function App() {
     </CartProvider>
   )
 }
+
 export default App

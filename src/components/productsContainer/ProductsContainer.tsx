@@ -22,11 +22,6 @@ const ProductsContainer = () => {
         <Route path='/semillas' element={<Semillas  />} />
         <Route path='/prod_envasados' element={<ProdEnvasados  />} />
         <Route path='/:category/:id' element={<DetalleProd />} />
-        <Route path='/pagar' element={<RutaProtegida >
-          <Pagar />
-        </RutaProtegida>
-        } >
-        </Route>
       </Routes>
 
     </section>
