@@ -14,12 +14,12 @@
 /** Hero **/
 
 .hero {
-    --nav-icon-background: url("../../../assets/menu-open.svg");
+    --nav-icon-background: url("/menu-open.svg");
     --transform-list-menu: translate(-100%);
 }
 
 .hero:has(.nav__checkbox:checked) {
-    --nav-icon-background: url("../../../assets/menu-close.svg");
+    --nav-icon-background: url("/menu-close.svg");
     --transform-list-menu: translate(0);
 }
 

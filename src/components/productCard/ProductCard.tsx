@@ -9,9 +9,6 @@ import { useCartContext } from '../../context/CartContext'
 import { CartItem, ProductType } from '../../types/product-type'
 
 
-
-
-
 const ProductCard = ({ id, category, url_img, product_name, description, presentations, price }: ProductType) => {
 
   const { handleAddToCart } = useCartContext()
@@ -61,14 +58,16 @@ const ProductCard = ({ id, category, url_img, product_name, description, present
     navigate(`/${category}/${id}`)
   }
 
- useEffect(() => {
-  setSubtotal(quantity * unitPrice)
-}, [quantity, unitPrice])
+  useEffect(() => {
+    setSubtotal(quantity * unitPrice)
+  }, [quantity, unitPrice])
 
 
   return (
     <div className={styles.card}>
-      <img src={url_img} alt={product_name} className={styles.card_img} />
+      <div className={styles.card_img_wrapper}>
+        <img src={url_img} alt={product_name} className={styles.card_img} />
+      </div>
       <h2 className={styles.card_title}>{product_name}</h2>
       <p className={styles.card_description}>{description}</p>
       <form onSubmit={handleProductToCart}>
