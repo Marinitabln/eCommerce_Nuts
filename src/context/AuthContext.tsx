@@ -10,7 +10,7 @@ type AuthContextType = {
   isAuthenticated: boolean
   setIsAuthenticated: (value: boolean) => void
   authLoading: boolean
-  login: (name: string, email: string, password: string) => Promise<void>
+  login: ( email: string, password: string) => Promise<void>
   logout: () => void
   isLoginModalOpen: boolean
   openLoginModal: () => void
@@ -33,7 +33,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const navigate = useNavigate()
 
-  const login = async (name: string, email: string, password: string) => {
+  const login = async (email: string, password: string) => {
     setAuthLoading(true)
     try {
       const user = await loginService(email, password)

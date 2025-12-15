@@ -18,6 +18,8 @@ const ProductCard = ({ id, category, url_img, product_name, description, present
   const [unitPrice, setUnitPrice] = useState(price[0])
   const [subtotal, setSubtotal] = useState(price[0])
 
+  const presentationId = `presentation-${id}`
+
   const navigate = useNavigate()
 
   //Manejar cantidad
@@ -72,8 +74,8 @@ const ProductCard = ({ id, category, url_img, product_name, description, present
       <p className={styles.card_description}>{description}</p>
       <form onSubmit={handleProductToCart}>
         <div className={styles.card_presentation}>
-          <label htmlFor="presentation">Tamaño:</label>
-          <select name="presentation" id="presentation" onChange={handlePresentation}>
+          <label htmlFor={presentationId}>Tamaño:</label>
+          <select name="presentation" id={presentationId} onChange={handlePresentation}>
             {presentations.map((presentation, index) => (
               <option key={index} value={presentation}>{presentation}</option>
             ))}

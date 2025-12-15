@@ -18,13 +18,13 @@ const LoginModal = ({ onClose }: LoginModalProps) => {
   const navigate = useNavigate()
   const location = useLocation()
 
-  const [form, setForm] = useState({ name: '', email: '', password: '' })
+  const [form, setForm] = useState({email: '', password: '' })
 
   const handleLogin = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     try {
-      await login(form.name, form.email, form.password)
+      await login(form.email, form.password)
       onClose()
       navigate('/pagar')
 
@@ -41,15 +41,7 @@ const LoginModal = ({ onClose }: LoginModalProps) => {
         <h2>Iniciar sesión</h2>
         <p className={styles.text}>Ingresa tus credenciales para comenzar</p>
         <form onSubmit={handleLogin}>
-          <input
-            type="text"
-            placeholder="Nombre completo"
-            value={form.name}
-            onChange={(e) =>
-              setForm({ ...form, name: e.target.value })
-            }
-          />
-
+          
           <input
             type="email"
             placeholder="Email"
