@@ -1,6 +1,7 @@
 import ProductCard from '../components/productCard/ProductCard.js'
 import { useProductsContext } from '../context/ProductContext.js'
 import { filterProductsByCategory } from '../utils/filterProductsByategory.js'
+import styles from '../App.module.css'
 
 const Semillas = () => {
 
@@ -12,11 +13,12 @@ const Semillas = () => {
 
     return (
         <>
-            <h1>Semillas</h1>
+            <h1 className={styles.h1Category}>Semillas</h1>
             {
                 semillas.map((elem) =>
                     <ProductCard
                         key={elem.id}
+                        category={elem.category}
                         id={elem.id}
                         url_img={elem.url_img}
                         product_name={elem.product_name}
@@ -27,7 +29,7 @@ const Semillas = () => {
                                 : [elem.presentations]
                         }
                         price={elem.price}
-                         />)
+                    />)
             }
         </>
     )
