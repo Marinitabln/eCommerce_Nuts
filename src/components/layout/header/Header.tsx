@@ -8,7 +8,8 @@ import styles from './Header.module.css'
 const Header = () => {
     const { user, logout, isAuthenticated, openLoginModal } = useAuthContext()
     const [dropdownOpen, setDropdownOpen] = useState(false)
-
+    
+    const rol = user?.role === 'admin' ? 'ADMINISTRADOR' : 'CLIENTE'
     const userBtnRef = useRef<HTMLButtonElement | null>(null)
     const [dropdownPosition, setDropdownPosition] = useState<{ top: number; left: number }>({
         top: 0,
@@ -32,7 +33,6 @@ const Header = () => {
         setDropdownOpen(prev => !prev)
     }
 
-    const rol = user?.role === 'admin' ? 'ADMINISTRADOR' : 'CLIENTE'
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -114,6 +114,9 @@ const Header = () => {
                             >
                                 <span>{rol}</span>
                                 <p>{getFirstName(user.name)}</p>
+                                {user.role === 'admin' && (
+                                    <Link to="/dashboard" onClick={() => setDropdownOpen(false)} className={styles.linkDashboard}>Dashboard</Link>
+                                ) }
                                 <hr/>
                                 <button onClick={logout}>cerrar sesión</button>
                             </div>

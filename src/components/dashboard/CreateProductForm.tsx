@@ -3,6 +3,7 @@ import type { ProductBase } from '../../types/product-type'
 import Button from '../ui/Button'
 import styles from './CreateProductForm.module.css'
 import { postProducts } from '../../services/services'
+import { useNavigate } from 'react-router-dom'
 
 type FormErrors = {
   product_name?: string
@@ -22,13 +23,12 @@ const initialProduct: ProductBase = {
   price: [0]
 }
 
-function CreateProductForm() {
+function CreateProductForm({ onCancel }: { onCancel?: () => void }) {
   const [product, setProduct] = useState<ProductBase>(initialProduct)
   const [errors, setErrors] = useState<FormErrors>({})
   const [loading, setLoading] = useState(false)
 
   const [hasSubmitted, setHasSubmitted] = useState(false)
-
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -126,66 +126,68 @@ function CreateProductForm() {
   }
 
 
-const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault()
-  if (!validateForm()) return
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!validateForm()) return
 
-  setLoading(true)
+    setLoading(true)
 
-  try {
-    await postProducts(product)
-    console.log('Producto creado correctamente')
-    setProduct(initialProduct)
-    setErrors({})
-  } catch (error) {
-    alert('Error al crear el producto')
-  } finally {
-    setLoading(false)
+    try {
+      await postProducts(product)
+      console.log('Producto creado correctamente')
+      setProduct(initialProduct)
+      setErrors({})
+    } catch (error) {
+      alert('Error al crear el producto')
+    } finally {
+      setLoading(false)
+    }
   }
-}
 
 
   return (
     <form onSubmit={handleSubmit} className={styles.formCreate}>
       <h2>Agregar producto</h2>
-      <label>Nombre del producto</label>
-      <input
-        name="product_name"
-        placeholder="Nombre"
-        value={product.product_name}
-        onChange={handleChange}
-      />
-      {hasSubmitted && errors.product_name && <p className={styles.errors}>{errors.product_name}</p>}
+      <div className={styles.colOne}>
+        <label>Nombre del producto</label>
+        <input
+          name="product_name"
+          placeholder="Nombre"
+          value={product.product_name}
+          onChange={handleChange}
+        />
+        {hasSubmitted && errors.product_name && <p className={styles.errors}>{errors.product_name}</p>}
 
-      <label>Descripción</label>
-      <textarea
-        name="description"
-        placeholder="Descripción"
-        value={product.description}
-        onChange={handleChange}
-        maxLength={200}
-      />
-      {hasSubmitted && errors.description && <p className={styles.errors}>{errors.description}</p>}
+        <label>Descripción</label>
+        <textarea
+          name="description"
+          placeholder="Descripción"
+          value={product.description}
+          onChange={handleChange}
+          maxLength={200}
+        />
+        {hasSubmitted && errors.description && <p className={styles.errors}>{errors.description}</p>}
 
-      <label>Categoría</label>
-      <input
-        name="category"
-        placeholder="Categoría"
-        value={product.category}
-        onChange={handleChange}
-      />
+        <label>Categoría</label>
+        <input
+          name="category"
+          placeholder="Categoría"
+          value={product.category}
+          onChange={handleChange}
+        />
 
-      {hasSubmitted && errors.category && <p className={styles.errors}>{errors.category}</p>}
+        {hasSubmitted && errors.category && <p className={styles.errors}>{errors.category}</p>}
 
-      <label>URL de imagen</label>
-      <input
-        name="url_img"
-        placeholder="URL de imagen"
-        value={product.url_img}
-        onChange={handleChange}
-      />
-      {hasSubmitted && errors.url_img && <p className={styles.errors}>{errors.url_img}</p>}
+        <label>URL de imagen</label>
+        <input
+          name="url_img"
+          placeholder="URL de imagen"
+          value={product.url_img}
+          onChange={handleChange}
+        />
+        {hasSubmitted && errors.url_img && <p className={styles.errors}>{errors.url_img}</p>}
 
+      </div>
       <div className={styles.presentations}>
         <h3>Presentaciones</h3>
         <Button onClick={addPresentation} variant="secondary" text="Agregar presentación" />
@@ -224,6 +226,12 @@ const handleSubmit = async (e: React.FormEvent) => {
 
       </div>
       <div className={styles.submitWrapper}>
+        <Button
+          type="button"
+          text="Cancelar"
+          variant="secondary"
+          onClick={onCancel}
+        />
         <Button
           type="submit"
           text={loading ? 'Guardando...' : 'Guardar producto'}

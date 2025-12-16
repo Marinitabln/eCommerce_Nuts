@@ -146,11 +146,25 @@
     cursor: pointer;
 }
 
+.linkDashboard {
+    display: block;
+    margin-block: 0.5rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.linkDashboard:hover, .logout:hover {
+       color: var(--color-secondary);
+ 
+}
+
 .logout {
     padding: '8px 12px';
     cursor: 'pointer';
     transition: 'background 0.2s';
 }
+
 
 @media (width >=900px) {
 

@@ -1,0 +1,72 @@
+.dashboardTableContainer{
+    margin-top: 20px;
+    background-color: white;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow-x: auto;
+    padding: 15px;
+    margin-inline: auto;
+    margin-top: 2rem;
+    }
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.actions svg {
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+.tableHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.addBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: grid;
+  place-items: center;
+}
+
+.modalContent {
+  background: white;
+  padding: 2rem;
+  max-width: 600px;
+  width: 100%;
+  position: relative;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+@media (min-width: 768px) {
+    .dashboardTableContainer{
+        padding: 35px;
+        max-width: 650px;
+    }
+}

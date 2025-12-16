@@ -53,6 +53,15 @@ margin-block: 2rem;
 
 .submitWrapper {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   margin-block: 1rem;
+  gap: 10px;
+}
+
+
+@media (min-width: 768px) {
+    .formCreate {
+        width: 500px;
+        margin: 1rem auto;
+    }
 }
