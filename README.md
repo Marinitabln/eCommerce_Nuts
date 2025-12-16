@@ -1,16 +1,121 @@
-# React + Vite
+# 🛒 Proyecto Ecommerce "Nuts | Tienda"
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una aplicación **Ecommerce** desarrollada para la gestión y visualización de productos, orientada a una arquitectura frontend moderna con consumo de APIs REST.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Características principales
 
-## React Compiler
+* Listado de productos
+* Creación, edición y eliminación de productos
+* Formularios con validaciones
+* Gestión de estados y manejo de errores
+* Navegación entre vistas
+* Integración con API REST
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🧰 Tecnologías utilizadas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **React**
+* **TypeScript**
+* **Vite**
+* **React Router**
+* **CSS Modules** 
+* **Fetch API**
+
+---
+
+## 📁 Estructura del proyecto
+
+```bash
+src/
+├── components/        # Componentes reutilizables
+├── pages/             # Vistas principales
+├── services/          # Lógica de conexión con la API
+├── hooks/             # Custom hooks
+├── types/             # Tipos y modelos TypeScript
+├── utils/             # Funciones utilitarias
+├── styles/            # Estilos globales
+└── main.tsx           # Punto de entrada
+```
+
+---
+
+## 🔗 API
+
+El proyecto consume una API REST para la gestión de productos.
+
+### Ejemplo de endpoints
+
+* `GET /products` → Obtener todos los productos
+* `GET /products/:id` → Obtener producto por ID
+* `POST /products` → Crear producto
+* `PUT /products/:id` → Actualizar producto
+* `DELETE /products/:id` → Eliminar producto
+
+---
+
+## 📝 Modelo de producto (ejemplo)
+
+```ts
+export interface Product {
+  id?: string
+  product_name: string
+  description: string
+  category: string
+  price: number
+  url_img: string
+  presentations: string[]
+}
+```
+
+---
+
+## ▶️ Instalación y ejecución
+
+1. Clonar el repositorio:
+
+```bash
+git clone https://github.com/Marinitabln/eCommerce_Nuts.git
+```
+
+2. Instalar dependencias:
+
+```bash
+npm install
+```
+
+3. Ejecutar el proyecto en desarrollo:
+
+```bash
+npm run dev
+```
+
+4. Abrir en el navegador:
+
+```
+http://localhost:5173
+```
+
+---
+
+## ✅ Validaciones
+
+* Campos obligatorios
+* Formatos válidos (URLs, números)
+* Control de errores de API
+
+-
+---
+
+## 👩‍💻 Autor
+
+Desarrollado por **Marina Blanco**
+Frontend Developer
+
+---
+
+## 📄 Licencia
+
+Este proyecto se distribuye bajo licencia MIT.
