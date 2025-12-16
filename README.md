@@ -46,7 +46,7 @@ src/
 
 El proyecto consume una API REST para la gestión de productos.
 
-### Ejemplo de endpoints
+### Endpoints
 
 * `GET /products` → Obtener todos los productos
 * `GET /products/:id` → Obtener producto por ID
@@ -56,18 +56,22 @@ El proyecto consume una API REST para la gestión de productos.
 
 ---
 
-## 📝 Modelo de producto (ejemplo)
+## 📝 Modelo de producto
 
 ```ts
-export interface Product {
-  id?: string
+export type ProductBase = {
   product_name: string
   description: string
-  category: string
-  price: number
   url_img: string
+  category: string
   presentations: string[]
+  price: number[]
 }
+
+export type ProductType = ProductBase & {
+  id: string
+}
+
 ```
 
 ---
