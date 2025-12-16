@@ -13,26 +13,30 @@ type LoginModalProps = {
 
 const LoginModal = ({ onClose }: LoginModalProps) => {
 
-  const { login, authLoading } = useAuthContext()
+  const { login, user} = useAuthContext()
 
   const navigate = useNavigate()
   const location = useLocation()
 
   const [form, setForm] = useState({email: '', password: '' })
 
-  const handleLogin = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+ const handleLogin = async (e: FormEvent<HTMLFormElement>) => {
+  e.preventDefault()
 
-    try {
-      await login(form.email, form.password)
-      onClose()
+  try {
+    const loggedUser = await login(form.email, form.password)
+
+    onClose()
+
+    if (loggedUser.role === 'admin') {
+      navigate('/dashboard')
+    } else {
       navigate('/pagar')
-
-    } catch (err) {
-      alert('Credenciales inválidas')
     }
+  } catch {
+    alert('Credenciales inválidas')
   }
-
+}
   return (
     <div className={styles.overlay}>
       <div className={styles.modal}>

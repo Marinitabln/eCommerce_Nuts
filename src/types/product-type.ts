@@ -1,13 +1,15 @@
-export type ProductType = {
-  id: string;
-  category?: string;
-  product_name: string;
-  description: string;
-  presentations: string[];
-  price: number[];
-  url_img: string;
-};
+export type ProductBase = {
+  product_name: string
+  description: string
+  url_img: string
+  category: string
+  presentations: string[]
+  price: number[]
+}
 
+export type ProductType = ProductBase & {
+  id: string
+}
 
 export type CartItem = {
   productId: string

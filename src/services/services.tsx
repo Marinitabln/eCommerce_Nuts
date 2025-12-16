@@ -1,3 +1,4 @@
+import { ProductBase } from "../types/product-type";
 
 export const getProducts = async () => {
       try {
@@ -12,3 +13,20 @@ export const getProducts = async () => {
         throw error       
       }      
     }
+
+export const postProducts = async (product: ProductBase) => {
+  const response = await fetch(
+    'https://68dfefb793207c4b47933ab5.mockapi.io/api/PRODUCTS',
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(product)
+    }
+  )
+
+  if (!response.ok) {
+    throw new Error('Error al crear producto')
+  }
+
+  return response.json()
+}

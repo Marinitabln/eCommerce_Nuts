@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from 'react'
 import styles from './Header.module.css'
 
 const Header = () => {
-    const { user, logout } = useAuthContext()
+    const { user, logout, isAuthenticated, openLoginModal } = useAuthContext()
     const [dropdownOpen, setDropdownOpen] = useState(false)
 
     const userBtnRef = useRef<HTMLButtonElement | null>(null)
@@ -86,7 +86,11 @@ const Header = () => {
                             <li className={styles.nav__item}>
                                 <Link to="#contact" className={styles.nav__link}>Contacto</Link>
                             </li>
-
+                            {!isAuthenticated && (
+                                <li className={styles.nav__item}>
+                                    <button onClick={openLoginModal} className={styles.nav__link}>Iniciar sesión</button>
+                                </li>
+                            )}
                             {user && (
                                 <li className={styles.nav__item}>
                                     <span

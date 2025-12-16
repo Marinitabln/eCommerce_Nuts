@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react'
+import { createContext, useContext, useEffect, useRef, useState } from 'react'
 import { loginService } from '../services/auth-service'
 import type { User } from '../types/user-type'
 import { useCartContext } from './CartContext'
@@ -10,7 +10,7 @@ type AuthContextType = {
   isAuthenticated: boolean
   setIsAuthenticated: (value: boolean) => void
   authLoading: boolean
-  login: ( email: string, password: string) => Promise<void>
+  login: (email: string, password: string) => Promise<User>
   logout: () => void
   isLoginModalOpen: boolean
   openLoginModal: () => void
@@ -33,20 +33,18 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const navigate = useNavigate()
 
-  const login = async (email: string, password: string) => {
-    setAuthLoading(true)
-    try {
-      const user = await loginService(email, password)
-      setUser(user)
-      setIsAuthenticated(true)
-      localStorage.setItem('auth', JSON.stringify(user))
-    } catch (error) {
-      setIsAuthenticated(false)
-      throw error
-    } finally {
-      setAuthLoading(false)
-    }
+const login = async (email: string, password: string): Promise<User> => {
+  setAuthLoading(true)
+  try {
+    const user = await loginService(email, password)
+    setUser(user)
+    setIsAuthenticated(true)
+    localStorage.setItem('auth', JSON.stringify(user))
+    return user
+  } finally {
+    setAuthLoading(false)
   }
+}
   const logout = () => {
     setUser(null)
     setIsAuthenticated(false)
